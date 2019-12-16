@@ -3,9 +3,10 @@
 <head>
 	<title>Jogo da Cobrinha</title>
 	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-
+	<div id="interface" class="container">
 	<canvas id="stage" width="600" height="600"></canvas>
 	<script type="text/javascript">
 		
@@ -13,7 +14,7 @@
 			var stage = document.getElementById('stage');//repera o id do elemento
 			var ctx = stage.getContext("2d");//contexto do jogo
 			document.addEventListener("keydown", keyPush);
-			setInterval(game, 60);
+			var tarefa = setInterval(game, 60);
 
 			const vel = 1;//casas que a cobrinha ando por vez
 			var vx = 0;//velocidade x
@@ -24,9 +25,9 @@
 			var qp = 30;//quantidade de peças tabuleiro
 			var ax = 15;//posição do eixo da maça
 			var ay = 15;//posição do eixo da maça
-
 			var trail = [];//rastro da cobrinha
 			var tail = 5;//calda da cobrinha(tamanho)
+			var pause = false;
 
 
 			//movimento da cobrinha
@@ -96,6 +97,13 @@
 						vx = 0;
 						vy = vel;
 						break;
+					case 32://espaço
+						if (!pause) {
+							clearInterval(tarefa); pause = true;
+						}else{
+							tarefa = setInterval(game, 60); pause = false;
+						}
+						break;
 					default:
 						break;
 				}
@@ -103,6 +111,7 @@
 		}
 
 	</script>
+	</div>
 
 </body>
 </html>
