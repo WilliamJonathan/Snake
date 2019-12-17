@@ -1,6 +1,24 @@
-.container{
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
+#tabuleiro{
+	padding-top: 30px;
+}
+
+#pontuacao{
+	margin-top: 30px;
+	margin-left: 20px;
+	padding-top: 10px;
+	height: 600px;
+  	text-align: center;
+  	font-style: italic;
+  	font-size: smaller;
+  	text-indent: 0;
+  	border: thin silver solid;
+}
+
+#info{
+	padding-left: 10px;
+}
+
+.espaco{
+	padding-top: 240px;
+	padding-bottom: 240px;
 }
