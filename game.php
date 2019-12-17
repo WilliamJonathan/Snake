@@ -17,9 +17,9 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div id="pontuacao" class="col-md-3">
-				<div class="row">
-					<div class="col-md-4"><h3 id="pontos">Score:</h3></div>
-					<div class="col-md-4"><h3 id="nivel">Nivel:</h3></div>
+				<div>
+					<div class="mostrador"><h3 id="pontos">Score:</h3></div>
+					<div class="mostrador"><h3 id="nivel">Nivel:</h3></div>
 				</div>
 				<div class="espaco"></div>
 				<div class="row">
@@ -50,6 +50,8 @@
 						var trail = [0];//rastro da cobrinha
 						var tail = 5;//calda da cobrinha(tamanho)
 						var pause = false;
+						var pontos = 0;
+						//var nivel = 0;
 
 
 						//movimento da cobrinha
@@ -84,6 +86,8 @@
 									/*Condiição de game over*/
 									vx = vy = 0;
 									tail = 5;
+									pontos = 0;
+									//nivel = 0;
 
 								}
 							}
@@ -96,6 +100,9 @@
 							//define maça na tela de modo random e aumenta o tamanho da cobrinha quando come a maça
 							if (ax == px && ay == py) {
 								tail++;
+								pontos = pontos + 5;
+								document.getElementById("pontos").innerHTML = "Score: "+pontos;
+								//nivel++;
 								ax = Math.floor(Math.random()*qp);
 								ay = Math.floor(Math.random()*qp);
 								//console.log(tail);
