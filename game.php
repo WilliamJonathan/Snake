@@ -19,9 +19,13 @@
 			<div id="pontuacao" class="col-md-3">
 				<div>
 					<div class="mostrador"><h3 id="pontos">Score:</h3></div>
-					<div class="mostrador"><h3 id="nivel">Nivel:</h3></div>
+					<!--<div class="mostrador"><h3 id="nivel">Nivel:</h3></div>-->
 				</div>
-				<div class="espaco"></div>
+				<div class="espaco">
+					<h3>Use as teclas</h3><p>
+					<h1>&larr;&uarr;&rarr;&darr;</h1><p>
+					<h3>Para movimentar</h3>	
+				</div>
 				<div class="row">
 					<div id="info">
 						<h4>Use a tecla espaço para pausar</h4>
@@ -87,6 +91,7 @@
 									vx = vy = 0;
 									tail = 5;
 									pontos = 0;
+									document.getElementById("pontos").innerHTML = "Score: "+pontos;
 									//nivel = 0;
 
 								}
